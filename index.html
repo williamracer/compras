@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Compras</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <button id="toggle-sidebar" class="material-icons">menu</button>
+  <div id="sidebar">
+    <div id="total">
+      <span id="ttl">total:</span> R$ 0.00
+    </div>
+    <h2>Adicionar Item</h2>
+    <form id="item-form">
+      <label for="item-name">Item:</label>
+      <input type="text" id="item-name" required><br>
+      <label for="item-price">Preço Unitário:</label>
+      <input type="number" id="item-price" step="0.01" required><br>
+      <label for="item-quantity">Quantidade:</label>
+      <input type="number" id="item-quantity" step="0.01" required><br>
+      <button type="submit">ADICIONAR</button>
+    </form>
+  </div>
+  <div id="content">
+    <h2>Lista de Compras</h2>
+    <div id="table-container">
+      <table id="item-list">
+        <thead>
+          <tr>
+            <th data-column="name">Item <div class="sort-icons"></div></th>
+            <th data-column="price">Preço <div class="sort-icons"></div></th>
+            <th data-column="quantity">Qtd <div class="sort-icons"></div></th>
+            <th data-column="subtotal">Subtotal <div class="sort-icons"></div></th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Os itens cadastrados serão adicionados aqui -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <button id="save-as-pdf" class="material-icons">save_alt</button>
+  <script src="scripts.js"></script>
+</body>
+</html>
